@@ -6,9 +6,10 @@ export default () => {
   const handleClick = () => {
     const node = document.getElementById('p3')
 
-    scrollIntoView(node, {
+    const actions = scrollIntoView(node, {
       mode: 'if-needed'
     })
+    console.log(actions)
   }
 
   return (

@@ -1,7 +1,7 @@
 import { IScrollOptions, IActions } from './types'
 import { isElement, isScrollable } from './utils'
 
-const scrollIntoView = (target: Element, options: IScrollOptions): void => {
+const scrollIntoView = (target: Element, options: IScrollOptions) => {
   const { 
     block = 'center', 
     inline = 'center', 
@@ -34,11 +34,11 @@ const scrollIntoView = (target: Element, options: IScrollOptions): void => {
     }
   }
 
-  const vpWidth = window.visualViewport.width || window.innerWidth
-  const vpHeight = window.visualViewport.height || window.innerHeight
+  const vpWidth = window.innerWidth
+  const vpHeight = window.innerHeight
 
-  const viewportX = window.scrollX || pageXOffset
-  const viewportY = window.scrollY || pageYOffset
+  const viewportX = window.scrollX || window.pageXOffset
+  const viewportY = window.scrollY || window.pageYOffset
 
   // 获取target 的dom rect
   const { 
@@ -97,9 +97,8 @@ const scrollIntoView = (target: Element, options: IScrollOptions): void => {
       targetBottom <= bottom &&
       targetRight <= right
     ) {
-      console.log('ele :>> ', ele);
+      return actions
     }
-    console.log('11 :>> ', 11);
 
   }
 
